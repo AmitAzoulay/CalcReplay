@@ -55,7 +55,7 @@ def get_parsed_response(sock):
         if not part:
             break
         body += part
-
+    print("Response: ", body)
     return body
 def is_valid_operation(operation):
     if operation in OPERATIONS_LIST and len(operation) == 1:
@@ -66,7 +66,7 @@ def is_valid_operation(operation):
 def main():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_address_and_port = (HOST, PORT)
-    sock.connect(server_address_and_port)
+    sock.connect((HOST, PORT))
     
     number = input("Enter initial number: ")
     sock.send(generate_init_req(number).encode())
@@ -82,7 +82,9 @@ def main():
                 sock.close()
                 sock = reconnect()
                 continue 
-            response = get_parsed_response(sock).decode().split(":")[1].split("}")[0]
+            response = get_parsed_response(sock).decode()
+            
+            response = response.split(":")[1].split("}")[0]
             
             print("current number: ", response)
         else:
