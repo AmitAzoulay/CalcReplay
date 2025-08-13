@@ -14,6 +14,7 @@ async def add_numbers(number: int):
 
 @app.get("/perform/{operation}")   
 async def perform_operation(operation: str):
+    print(operation)
     if len(operation) == 1 and "r" not in operation:
         res = my_library.perform_operation(operation.encode())
         return {"current number": res}
