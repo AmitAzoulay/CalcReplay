@@ -1,8 +1,6 @@
 # CalcReplay
-
 A FastAPI-based service that utilizes a shared C library (`.so`) for basic calculations.  
----
-
+```
 ## Building the shared library(.so)
 
 gcc -c -fPIC calc.c -o calc.o  
