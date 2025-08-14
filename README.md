@@ -14,6 +14,7 @@ fastapi installing:
 pip install "fastapi[standard]"  
 univcorn replay:app --reload  
 ```
+Go to - http://127.0.0.1:8000  
 ## run with docker
 
 Under docker server dir:
