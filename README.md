@@ -7,12 +7,13 @@ gcc -c -fPIC calc.c -o calc.o
 gcc -shared -o calc.so calc.o  
 ```
 ## run without docker
+On linux:
 ```
-py -m venv .venv  
-.venv\Scripts\activate  
+python3 -m venv .venv  
+source .venv/bin/activate  
 fastapi installing:  
 pip install "fastapi[standard]"  
-univcorn replay:app --reload  
+uvicorn replay:app --reload  
 ```
 Go to - http://127.0.0.1:8000  
 ## run with docker
