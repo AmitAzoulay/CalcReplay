@@ -13,7 +13,7 @@ python3 -m venv .venv
 source .venv/bin/activate  
 fastapi installing:  
 pip install "fastapi[standard]"  
-uvicorn replay:app --reload  
+uvicorn apiserver:app --reload  
 ```
 Go to - http://127.0.0.1:8000  
 ## run with docker
